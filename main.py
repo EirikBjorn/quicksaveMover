@@ -29,7 +29,7 @@ def copySave():
 
 ## Watch savegame dir for changes
 class OnMyWatch:
-    dirToWatch = r"C:\Program Files (x86)\Steam\userdata\91034458\20920\remote"
+    dirToWatch = r"C:\Program Files (x86)\Steam\userdata" + steamUserID + r"\20920\remote"
 
     def __init__(self):
         self.observer = Observer()
