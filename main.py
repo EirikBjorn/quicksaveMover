@@ -2,7 +2,7 @@ import shutil, time, json
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-steamUserID = "\00000000"
+steamUserID = "\91034458"
 destinationDir = "E:\witcher2"
 
 ## Copy save files to another dir
@@ -11,8 +11,6 @@ def copySave():
         data = json.load(f)
         f.seek(0)
         save = data.get("save")
-
-        print(save)
 
         saveSrc = r"C:\Program Files (x86)\Steam\userdata" + steamUserID + r"\20920\remote\QuickSave.sav"
         saveDest = destinationDir + "\QuickSave_" + str(save) + ".sav"
@@ -26,6 +24,8 @@ def copySave():
 
     shutil.copy2(saveSrc, saveDest)
     shutil.copy2(tmbSrc, tmbDest)
+
+    print(f"QuckSave_{str(save)}.sav", " Has been backed up!")
 
 ## Watch savegame dir for changes
 class OnMyWatch:
@@ -56,7 +56,6 @@ class Handler(FileSystemEventHandler):
             return None
  
         elif event.event_type == 'created': 
-            print("New quicksave has been copied to backup folder")
             copySave()
 
 
