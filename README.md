@@ -1,1 +1,1 @@
-Badly written script to copy savegames to a different directory for games that only let you keep one savegame at a time | Currently tailored for The Witcher 2: Assassin of Kings
+Badly written script to copy savegames to a different directory for games that only let you keep one savegame at a time 
