@@ -2,7 +2,7 @@ import shutil, time, json
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-steamUserID = "\91034458"
+steamUserID = "\"
 destinationDir = "E:\witcher2"
 
 ## Copy save files to another dir
